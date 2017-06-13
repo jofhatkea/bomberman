@@ -9,11 +9,24 @@ class Preloader {
         this.stage=stage;
         this.queue.on("progress", this.progress.bind(this));
         this.queue.on("complete", this.cleanUp.bind(this));
+        this.box = new createjs.Container();
+        this.stage.addChild(this.box);
     }
     progress(e){
-        this.stage.update(e);
+        this.box.removeAllChildren();
+        for(let i=0; i<Math.round(e.progress*100); i++){
+            let t = new createjs.Shape();
+            t.graphics.beginFill("#FFF").drawCircle(0,0,5);
+            t.x=this.stage.canvas.width / 100 * i +5;
+            t.y=300;
+            this.box.addChild(t);
+
+        }
+        this.stage.update(e)
+
     }
     cleanUp(e){
+
         this.stage.removeAllChildren();
         this.stage.update(e);
         this.callback();
