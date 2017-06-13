@@ -1,0 +1,13 @@
+{
+  "manifest":[
+    {"id": "levels", "src":"assets/levels.json"},
+    "js/Tile.js",
+    "js/LevelSelector.js",
+    "js/Countdown.js",
+    "js/Hero.js",
+    "js/Bomb.js",
+    "js/Explosion.js",
+    "js/ExplosionDirection.js",
+    "js/Powerup.js"
+  ]
+}
