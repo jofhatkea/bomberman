@@ -79,6 +79,5 @@ class ExplosionDirection extends createjs.Shape {
                 g.powerups.push(x);
             }, 1100)
         }
-        //pick up pu
     }
 }
